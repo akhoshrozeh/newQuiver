@@ -1,0 +1,22 @@
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+label > input {
+  margin-left: 10px;
+  width: 200px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
