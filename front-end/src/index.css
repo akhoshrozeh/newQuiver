@@ -1,22 +1,82 @@
-.form-container form {
+
+* {
+  font-family: monospace;
+
+}
+
+.for-sale-page {
+  display: flex;
+}
+
+.for-sale-page .for-sale-filter {
+  /* font-size: 1.3em;
+  grid-column: 2/4; */
+  /* flex: ; */
+  width: 18%; /* 1/4 of the page */
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 1.3em;
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin: 0 auto;
+  align-items: left; 
+  position: fixed;
+  
 }
 
-label {
-  display: flex;
-  align-items: center;
+.for-sale-page .for-sale-filter div {
   margin-bottom: 10px;
-  width: 100%;
+  padding: 0px;
 }
 
-label > input {
-  margin-left: 10px;
-  width: 200px;
-  padding: 5px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
+.for-sale-page .for-sale-filter input {
+  margin-bottom: 5px;
+  padding: 0px;
 }
+
+.for-sale-page .for-sale-filter p {
+  padding: 0px;
+  margin: 0px;
+
+}
+
+.for-sale-page .for-sale-list {
+  /* display: flex; 
+  flex-wrap: wrap;
+  grid-column: 3/4; */
+
+  text-align: center;
+  font-size: 1.3em;
+  flex: 3;
+  width: 82%; /* 3/4 of the page */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 4 columns */
+  gap: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 18%;
+}
+
+
+
+.for-sale-page .for-sale-list li {
+
+  text-align: center;
+  margin: 40px;
+  padding: 30px;
+  border-color: black;
+  border-radius: 2px;
+  font-size:1.3em;
+
+}
+
+.for-sale-list li:hover {
+  background-color: rgb(187, 220, 227);
+}
+
+
+/* 
+.card {
+  display: inline;
+  width: 200px;
+} */
 

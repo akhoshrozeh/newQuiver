@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
+import "../index.css";
+
 // props has a function updateParentBoards() which sends the state of forsaleBoards after a request to the server is made
 function ForSaleFilter (props) {
 
@@ -98,32 +100,61 @@ function ForSaleFilter (props) {
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                <p>minlen</p>
-                <input type="number" min="0" name="minLen" placeholder="Min"></input>
-                <p>maxlen</p>
-                <input type="numvber" name="maxLen" placeholder="Max"></input>
-                <p>minWidth</p>
+                <div>
+
+                    <p>Length</p>
+                    <input type="number" min="0" name="minLen" placeholder="Min"></input>
+                    <input type="number" name="maxLen" placeholder="Max"></input>
+                </div>
+
+                <div>
+
+                <p>Width</p>
                 <input type="number" min="0" name="minWidth" placeholder="Min"></input>
-                <p>maxWidth</p>
                 <input type="number" name="maxWidth" placeholder="Max"></input>
-                <p>min thick</p>
+                </div>
+                
+                <div>
+
+                <p>Thickness</p>
                 <input type="number" min="0" name="minThickness" placeholder="Min"></input>
-                <p>max thick</p>
                 <input type="number" name="maxThickness" placeholder="Max"></input>
-                <p>min volume</p>
+                </div>
+
+
+                <div>
+
+                <p>Volume</p>
                 <input type="number" min="0" name="minVolume" placeholder="Min"></input>
-                <p>max volume</p>
                 <input type="number" name="maxVolume" placeholder="Max"></input>
-                <p>min price</p>
+                </div>
+
+                <div>
+
+                <p>Price (USD)</p>
                 <input type="number" min="0" name="minPrice" placeholder="Min"></input>
-                <p>max price</p>
                 <input type="number" name="maxPrice" placeholder="Max"></input>
-                <p>address</p>
+                </div>
+
+
+                <div>
+
+                <p>Address</p>
                 <input type="text" name="address" placeholder="Address"></input>
-                <p>radius</p>
+                </div>
+
+                <div>
+
+                <p>Radius (km)</p>
                 <input type="number" name="radius" placeholder="Radius (km)"></input>
-                <p>search</p>
+                </div>
+                
+                <div>
+
+                <p>Search keywords</p>
                 <input type="text" name="searchQuery" placeholder="Search"></input>
+                </div>
+                
                 <br></br>
                 <button type="submit">Apply Filters</button>
             </form>

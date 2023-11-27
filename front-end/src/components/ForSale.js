@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
+import "../index.css";
 
 
 function ForSale () {
@@ -30,17 +31,20 @@ function ForSale () {
     if (forsaleBoards !== null) {
         // console.log(forsaleBoards[0]);
         return (
-            <div>For sale
+            <div className="for-sale-page">
                 
-                <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
-                {geoData && (
-                    <div>
-                        Showing results within radius of {geoData.label}
-                    </div>
-                )}
-                <ul>
+                <div className="for-sale-filter">
+                    <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
+                    {geoData && (
+                        <div className="show-loc">
+                            Showing results within radius of {geoData.label}
+                        </div>
+                    )}
+                </div>
+                
+                <ul className="for-sale-list">
                     {forsaleBoards.map(function(b){
-                    return <li key={b.postID}>
+                    return <li className="card" key={b.postID}>
                         <ForSalePreview  board={b}/>
                         </li>
                 })}
@@ -54,8 +58,10 @@ function ForSale () {
     
     else {
         return (
-            <div>
-                <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
+            <div className="for-sale-page">
+                <div className="for-sale-filter">
+                    <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
+                </div>
             </div>
         );
     }
