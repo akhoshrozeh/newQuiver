@@ -22,17 +22,15 @@ function ForSale () {
     }
 
     useEffect(() => {
-        console.log('render');
-        console.log(forsaleBoards);
     }, [forsaleBoards])
 
-    // let temp = {postID: '0014693684022', userID: '4462384965928', brand: 'Channel Islands', boardCondition: 'Fair', type: 'Egg'}
+
 
     if (forsaleBoards !== null) {
-        // console.log(forsaleBoards[0]);
+
+
         return (
             <div className="for-sale-page">
-                
                 <div className="for-sale-filter">
                     <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
                     {geoData && (
@@ -49,7 +47,6 @@ function ForSale () {
                         </li>
                 })}
                 </ul>
-                {/* <ForSalePreview board={forsaleBoards[0]} /> */}
     
             </div>
         )
@@ -60,8 +57,10 @@ function ForSale () {
         return (
             <div className="for-sale-page">
                 <div className="for-sale-filter">
+
                     <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
                 </div>
+                
             </div>
         );
     }

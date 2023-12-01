@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import "../index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 // props has a function updateParentBoards() which sends the state of forsaleBoards after a request to the server is made
 function ForSaleFilter (props) {
@@ -73,11 +76,8 @@ function ForSaleFilter (props) {
                     };
                     const res = await fetch(server, req);
                     const resJSON = await res.json();
-                    // console.log('resJSON', resJSON);
-                    // setGeoData(resJSON.geoData)
                     // contains rows, geoData, errors objects. POssible that geodata or errors is empty
                     props.updateForsaleBoards(resJSON);
-                    // console.log('geoData',geoData);
 
         
                 } catch (error) {
@@ -92,9 +92,6 @@ function ForSaleFilter (props) {
         
       }, [shouldFetch, filters]);
 
-    //   useEffect(() => {
-    //     console.log('geoData set!!!', geoData);
-    //   }, [geoData])
 
 
     return(
@@ -154,7 +151,7 @@ function ForSaleFilter (props) {
                 <p>Search keywords</p>
                 <input type="text" name="searchQuery" placeholder="Search"></input>
                 </div>
-                
+
                 <br></br>
                 <button type="submit">Apply Filters</button>
             </form>
