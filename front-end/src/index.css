@@ -13,6 +13,7 @@
   grid-column: 2/4; */
   /* flex: ; */
   width: 18%; /* 1/4 of the page */
+  margin-top: 50px;
   padding: 20px;
   box-sizing: border-box;
   font-size: 1.3em;
@@ -54,6 +55,7 @@
   padding: 20px;
   box-sizing: border-box;
   margin-left: 18%;
+  margin-top: 50px;
 }
 
 
@@ -70,6 +72,10 @@
 }
 
 .for-sale-list li:hover {
+  background-color: rgb(187, 220, 227);
+}
+
+.nav-link:hover {
   background-color: rgb(187, 220, 227);
 }
 

@@ -6,8 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter, RouterProvider
 } from 'react-router-dom';
+
 import ErrorPage from './error-page';
 import ForSale from './components/ForSale';
+import Login from './components/Login';
+
+import { Authenticator } from '@aws-amplify/ui-react';
+import { Amplify } from 'aws-amplify';
+import config from './amplifyconfiguration.json';
+Amplify.configure(config);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,12 +28,19 @@ const router = createBrowserRouter([
     path: "/for-sale",
     element: <ForSale />,
     errorElement: <ErrorPage/>,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    errorElement: <ErrorPage/>,
   }
 ]);
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authenticator.Provider>
+      <RouterProvider router={router} />
+    </Authenticator.Provider>
     {/* <App /> */}
   </React.StrictMode>
 );

@@ -1,5 +1,6 @@
 import ForSaleFilter from "./ForSaleFilter";
 import ForSalePreview from "./ForSalePreview";
+import QuiverNav from "./QuiverNav";
 import { useState } from "react";
 import { useEffect } from "react";
 // Bootstrap CSS
@@ -13,7 +14,6 @@ import "../index.css";
 function ForSale () {
     const [forsaleBoards, setForsaleBoards] = useState(null);
     const [geoData, setGeoData] = useState(null);
-
 
     // input is a JSON object which contains the MySQL rows of boards and also a geoData object
     const updateForsaleBoards = (updatedBoards) => {
@@ -30,24 +30,27 @@ function ForSale () {
 
 
         return (
-            <div className="for-sale-page">
-                <div className="for-sale-filter">
-                    <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
-                    {geoData && (
-                        <div className="show-loc">
-                            Showing results within radius of {geoData.label}
-                        </div>
-                    )}
+            <div>
+                <QuiverNav></QuiverNav>
+                <div className="for-sale-page">
+                    <div className="for-sale-filter">
+                        <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
+                        {geoData && (
+                            <div className="show-loc">
+                                Showing results within radius of {geoData.label}
+                            </div>
+                        )}
+                    </div>
+                    
+                    <ul className="for-sale-list">
+                        {forsaleBoards.map(function(b){
+                            return <li className="card" key={b.postID}>
+                            <ForSalePreview  board={b}/>
+                            </li>
+                    })}
+                    </ul>
+        
                 </div>
-                
-                <ul className="for-sale-list">
-                    {forsaleBoards.map(function(b){
-                    return <li className="card" key={b.postID}>
-                        <ForSalePreview  board={b}/>
-                        </li>
-                })}
-                </ul>
-    
             </div>
         )
         
@@ -55,12 +58,15 @@ function ForSale () {
     
     else {
         return (
-            <div className="for-sale-page">
-                <div className="for-sale-filter">
+            <div>
+                <QuiverNav></QuiverNav>
+                <div className="for-sale-page">
+                    <div className="for-sale-filter">
 
-                    <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
+                        <ForSaleFilter updateForsaleBoards={updateForsaleBoards}/>
+                    </div>
+                    
                 </div>
-                
             </div>
         );
     }
